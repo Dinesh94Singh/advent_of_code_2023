@@ -86,7 +86,7 @@ fn part2(lines: Vec<String>) {
                     first_number = v;
                 },
                 _ => {
-                    
+
                 }
             }
 
@@ -132,7 +132,7 @@ fn part2(lines: Vec<String>) {
                     last_number = v;
                 },
                 _ => {
-                    
+
                 }
             }
 
@@ -140,16 +140,11 @@ fn part2(lines: Vec<String>) {
                 break;
             }
 
-            println!("{}", i);
             let start = cmp::min(length, i + 2);
             let end = cmp::min(length, i + 5);
 
-            println!("{} - {}", start, end);
-
             for j in start..end {
                 let sub_string: &str = &each_line[i..j + 1];
-
-                println!("substring - {}", sub_string);
 
                 if number_in_words.contains_key(sub_string) {
                     found = true;
@@ -169,14 +164,9 @@ fn part2(lines: Vec<String>) {
             i -= 1;
         }
 
-        println!("Last number = {} ", last_number);
-
         let number = first_number * 10 + last_number;
         numbers.push(number as u32);
-        println!("\n\n");
     }
-
-    println!(" numbers - {:?}", numbers);
 
     println!("Part2 - {}", solve(numbers));
 }
