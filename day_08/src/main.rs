@@ -67,7 +67,7 @@ fn part2(lines: Vec<String>) -> u128 {
 
 
         let mut curr = key.to_string();
-        while true {
+        loop {
 
             println!("{:?}", curr);
 
